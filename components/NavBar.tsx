@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import logo from '@/assets/images/logo-white.png'
 import profileDefault from '@/assets/images/profile.png'
@@ -9,6 +10,8 @@ import { FaGoogle } from 'react-icons/fa'
 const NavBar = () => {
      const [IsMobileMenuOpen , setIsMobileMenuOpen ] = useState(false);
      const [IsProfielMenuOpen, setIsProfileMenuOpen] = useState(false);
+
+     const pathname = usePathname() 
 
     return (  <nav className="bg-blue-700 border-b border-blue-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -62,7 +65,7 @@ const NavBar = () => {
               <div className="flex space-x-2">
                 <Link
                   href="/"
-                  className="text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  className={`${pathname === '/' ? 'bg-black' : ''} text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >Home</Link>
                 <Link
                   href="/properties"
