@@ -69,11 +69,11 @@ const NavBar = () => {
                   >Home</Link>
                 <Link
                   href="/properties"
-                  className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                    className={`${pathname === '/properties' ? 'bg-black' : ''} text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >Properties</Link>
                 <Link
                   href="/properties/add"
-                  className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                   className={`${pathname === '/properties/add' ? 'bg-black' : ''} text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >Add Property</Link>
               </div>
             </div>
